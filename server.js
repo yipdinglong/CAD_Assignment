@@ -59,7 +59,7 @@ app.get('/login', function(req, res) {
   dbconnect.connection.query(query, (error, results) => {
     if (error) {
       console.error(error);
-      res.render('error');
+      res.render('lostandfound');
     } else {
       res.render('lostandfound', { rows: results });
     }
