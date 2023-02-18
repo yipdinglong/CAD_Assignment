@@ -1,0 +1,18 @@
+{
+  "name": "nodejs_app",
+  "version": "1.0.0",
+  "description": "Node.js on aws cloud9",
+  "author": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1317.0",
+    "body-parser": "^1.20.1",
+    "express": "^4.16.1",
+    "express-handlebars": "^6.0.7",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1"
+  }
+}
