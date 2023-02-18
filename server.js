@@ -11,7 +11,7 @@ const dbdetails = require('./dbconfig/db');
 const dbconnect = require('./dbconfig/dbconnection');
 
 const aws = require('aws-sdk');
-// aws.config.update({ region: 'us-west-2' });
+aws.config.update({ region: process.env.Region });
 const sns = new aws.SNS();
 
 const topicArn = process.env.TopicARN;
@@ -155,31 +155,4 @@ app.post('/subscribe', async (req, res) => {
 app.listen(PORT, HOST);
 console.log(`Running on Port ${PORT}`);
 
-
-//Tried Running SQL SCRIPT TO ADD SQL DATABASE AND TABLE INTO SQL (DOES NOT WORK - Currently Can only manually run sql script)  - - LostAndFound.sqk
-
-// const connection = mysql.createConnection({
-//   host: 'lostandfoundb.c773odc1wes9.us-west-2.rds.amazonaws.com',
-//   user: 'admin',
-//   password: 'nypadmin1234'
-// });
-
-// connection.connect(function(err) {
-//   if (err) throw err;
-//   console.log("Connected!");
-// });
-
-// //Setting Up Sql Script Path
-// const scriptPath = path.join(__dirname, 'LostAndFound.sql');
-// const script = fs.readFileSync(scriptPath, 'utf8');
-
-// connection.query(script, (error, results, fields) => {
-//   if (error) {
-//     console.error(error);
-//   } else {
-//     console.log(results);
-//   }
-// });
-
-// connection.end();
 
