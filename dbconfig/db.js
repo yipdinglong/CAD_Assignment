@@ -1,6 +1,6 @@
 module.exports = {
-    host: 'lostandfoundb.c773odc1wes9.us-west-2.rds.amazonaws.com',
-    database: 'LostAndFound',
-    username: 'admin',
-    password: 'nypadmin1234'
+    host: process.env.RDSEndpoint,
+    database: process.env.Database,
+    username: process.env.Username,
+    password: process.env.Password
 }

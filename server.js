@@ -7,13 +7,14 @@ var mysql = require('mysql');
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const db = require('./dbconfig/Add');
+const dbdetails = require('./dbconfig/db');
 const dbconnect = require('./dbconfig/dbconnection');
 
 const aws = require('aws-sdk');
-aws.config.update({ region: 'us-west-2' });
+// aws.config.update({ region: 'us-west-2' });
 const sns = new aws.SNS();
 
-const topicArn = 'arn:aws:sns:us-west-2:954007396880:New-Reported-Item';
+const topicArn = process.env.TopicARN;
 
 const multer = require('multer');
 const storage = multer.diskStorage({
@@ -152,7 +153,7 @@ app.post('/subscribe', async (req, res) => {
 
 
 app.listen(PORT, HOST);
-console.log(`Running on http://${HOST}:${PORT}`);
+console.log(`Running on Port ${PORT}`);
 
 
 //Tried Running SQL SCRIPT TO ADD SQL DATABASE AND TABLE INTO SQL (DOES NOT WORK - Currently Can only manually run sql script)  - - LostAndFound.sqk
