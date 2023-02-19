@@ -11,8 +11,9 @@ const dbdetails = require('./dbconfig/db');
 const dbconnect = require('./dbconfig/dbconnection');
 
 const aws = require('aws-sdk');
-// aws.config.update({ region: process.env.Region });
 const sns = new aws.SNS();
+
+aws.config.update({ region: process.env.AWS_REGION });
 
 const topicArn = process.env.TopicARN;
 
