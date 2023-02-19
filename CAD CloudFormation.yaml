@@ -67,7 +67,7 @@ Resources:
                         - 1
                         - !GetAZs
                           Ref: 'AWS::Region'
-      MapPublicIpOnLau6Ech: true
+      MapPublicIpOnLaunch: true
 
   VpcId:
     Type: AWS::EC2::VPC
